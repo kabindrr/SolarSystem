@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/a.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.solar-system {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #002b36 0%, #003b5c 50%, #000 100%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ffeb3b 0%, #fbc02d 70%, #f57f17 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 0, 0.8); /* Glow effect */
+  /* transform: translate(-50%, -50%); */
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  background: gray;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.mercury {
+  width: 8px;
+  height: 8px;
+  background: #9e9e9e;
+  animation: orbit 5s linear infinite;
+  transform-origin: 100px;
+}
+
+.venus {
+  width: 12px;
+  height: 12px;
+  background: #ff9800;
+  animation: orbit 10s linear infinite;
+  transform-origin: 150px;
+}
+
+.earth {
+  width: 16px;
+  height: 16px;
+  background: #2196f3;
+  animation: orbit 15s linear infinite;
+  transform-origin: 200px;
+}
+
+.mars {
+  width: 14px;
+  height: 14px;
+  background: #f44336;
+  animation: orbit 20s linear infinite;
+  transform-origin: 250px;
+}
+
+.jupiter {
+  width: 25px;
+  height: 25px;
+  background: #6d4c41;
+  animation: orbit 30s linear infinite;
+  transform-origin: 300px;
+}
+
+.saturn {
+  width: 22px;
+  height: 22px;
+  background: #fbc02d;
+  animation: orbit 35s linear infinite;
+  transform-origin: 350px;
+}
+
+.uranus {
+  width: 18px;
+  height: 18px;
+  background: #4fc3f7;
+  animation: orbit 40s linear infinite;
+  transform-origin: 400px;
+}
+
+.neptune {
+  width: 20px;
+  height: 20px;
+  background: #1e88e5;
+  animation: orbit 45s linear infinite;
+  transform-origin: 450px;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
