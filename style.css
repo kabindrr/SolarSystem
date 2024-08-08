@@ -37,8 +37,7 @@ body {
   height: 60px;
   background: radial-gradient(circle, #ffeb3b 0%, #fbc02d 70%, #f57f17 100%);
   border-radius: 50%;
-  box-shadow: 0 0 50px rgba(255, 255, 0, 0.8); /* Glow effect */
-  /* transform: translate(-50%, -50%); */
+  box-shadow: 0 0 50px rgba(255, 255, 0, 0.8);
 }
 
 .planet {
