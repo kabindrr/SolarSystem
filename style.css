@@ -1,266 +1,257 @@
+/* Reset and full-height container */
 .wrapper {
-  margin: 0px;
-  padding: 0px;
-}
-.solar-system {
+  margin: 0;
+  padding: 0;
   height: 100vh;
+  overflow: hidden; /* Ensure no scrollbars */
+}
+
+.solar-system {
+  height: 100%;
   width: 100%;
-  background-image: url(./assets/b.jpg);
+  background-image: url("./assets/b.jpg"); /* Replace with your background image */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Centering the sun */
 .sun {
   height: 140px;
   width: 140px;
-  background-image: url(./assets/sun.png);
+  background-image: url("./assets/sun.png"); /* Replace with your sun image */
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   position: absolute;
-  left: 45%;
-  bottom: 45%;
-  animation: rotate 30s linear infinite;
+  z-index: 10; /* Ensure sun is above orbits */
+}
+
+/* General orbit styles */
+.orbit {
+  position: absolute;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Orbit sizes and animations */
 .mercury-orbit {
   height: 160px;
   width: 160px;
   border: 1px solid rgba(231, 222, 222, 0.295);
-  position: absolute;
-  left: 44%;
-  bottom: 44%;
-  border-radius: 50%;
-  animation: rotate 2s linear infinite;
-  transform: translate(-50%, -50%);
+  animation: rotate-orbit 2s linear infinite;
 }
+
 .mercury {
-  height: 30px;
-  width: 30px;
-  background-image: url(./assets/mercury.png);
-  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-image: url("./assets/mercury.png"); /* Replace with your mercury image */
   background-position: center;
+  background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 5%;
-  bottom: 5%;
+  right: 50%;
+  left: 50%;
+  top: -10%;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
-  font-size: xx-small;
-  justify-content: center;
   align-items: center;
-  animation: rotate 2s linear infinite;
+  justify-content: center;
+  font-size: xx-small;
+  font-weight: bold;
+  animation: rotate-orbit 2s linear infinite;
 }
+
 .venus-orbit {
   height: 270px;
   width: 270px;
   border: 1px solid rgba(223, 209, 209, 0.342);
-  position: absolute;
-  left: 39%;
-  bottom: 38%;
-  border-radius: 50%;
-  animation: rotate 5s linear infinite;
+  animation: rotate-orbit 4s linear infinite;
 }
+
 .venus {
   height: 50px;
   width: 50px;
-  background-image: url(./assets/venus.png);
-  border-radius: 50%;
+  background-image: url("./assets/venus.png");
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 10%;
-  bottom: 5%;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: xx-small;
-  justify-content: center;
   align-items: center;
-  animation: rotate 2s linear infinite;
+  justify-content: center;
+  font-weight: bold;
+  animation: rotate-orbit 2s linear infinite;
 }
+
 .earth-orbit {
   height: 400px;
   width: 400px;
-  border: 1px solid rgba(221, 204, 204, 0.363);
-  position: absolute;
-  left: 33%;
-  bottom: 31.5%;
-  border-radius: 50%;
-  animation: rotate 10s linear infinite;
+  border: 1px solid rgba(223, 209, 209, 0.342);
+  animation: rotate-orbit 10s linear infinite;
 }
+
 .earth {
   height: 70px;
   width: 70px;
-  background-image: url(./assets/earth.png);
-  border-radius: 50%;
+  background-image: url("./assets/earth.png");
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 10%;
-  bottom: 5%;
+  top: -8%;
+  left: 50%;
+
+  transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: xx-small;
-  justify-content: center;
   align-items: center;
-  animation: rotate 2s linear infinite;
+  justify-content: center;
+  font-weight: bold;
+  animation: rotate-orbit 2s linear infinite;
 }
+
 .mars-orbit {
   height: 550px;
   width: 550px;
   border: 1px solid rgba(194, 181, 181, 0.164);
-  position: absolute;
-  left: 26%;
-  bottom: 24.5%;
-  border-radius: 50%;
-  animation: rotate 15s linear infinite;
+  animation: rotate-orbit 15s linear infinite;
 }
+
 .mars {
   height: 80px;
   width: 80px;
-  background-image: url(./assets/mars.png);
-  border-radius: 50%;
+  background-image: url("./assets/mars.png");
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 12%;
-  bottom: 5%;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate-orbit 2s linear infinite;
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: small;
-  justify-content: center;
   align-items: center;
-  animation: rotate 2s linear infinite;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
 }
 
 .jupiter-orbit {
   height: 750px;
   width: 750px;
-  border: 0px solid rgb(161, 17, 17);
-  position: absolute;
-  left: 17%;
-  bottom: 15.5%;
-  border-radius: 50%;
-  animation: rotate 35s linear infinite;
+  border: 0;
+  animation: rotate-orbit 45s linear infinite;
+  transform: rotate(-360deg);
 }
+
 .jupiter {
   height: 105px;
   width: 105px;
-  background-image: url(./assets/jupitor.png);
-  border-radius: 50%;
+  background-image: url("./assets/jupitor.png");
   background-position: center;
   background-size: cover;
-  position: absolute;
-  left: 12%;
-  bottom: 5%;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: small;
-  justify-content: center;
-  align-items: center;
-  animation: rotate 45s linear infinite;
-  overflow: hidden;
-}
-.saturn-orbit {
-  height: 600px;
-  width: 950px;
-  border: 0px solid rgb(161, 17, 17);
-  position: absolute;
-  left: 5.5%;
-  bottom: 20.5%;
   border-radius: 50%;
-  animation: rotate 105s;
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate-orbit 10s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-360deg);
+}
+
+.saturn-orbit {
+  height: 900px;
+  width: 600px;
+  border: 0;
+  animation: rotate-orbit 80s linear infinite;
 }
 
 .saturn {
   height: 125px;
   width: 125px;
-  background-image: url(./assets/saturn.png);
-  border-radius: 50%;
+  background-image: url("./assets/saturn.png");
   background-position: center;
   background-size: cover;
-  position: absolute;
-  left: 10%;
-  bottom: 5%;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: xx-small;
-  justify-content: center;
-  align-items: center;
-
-  animation: rotate 15s linear infinite;
-}
-.uranus-orbit {
-  height: 950px;
-  width: 550px;
-  border: 0px solid rgb(161, 17, 17);
-  position: absolute;
-  left: 25.5%;
-  bottom: 2.5%;
-
   border-radius: 50%;
-  transform: rotate(-45deg); /* Rotate the element 45 degrees to the left */
-  transform-origin: center;
-  animation: rotate 115s linear infinite;
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  animation: rotate-orbit 25s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.uranus-orbit {
+  height: 750px;
+  width: 950px;
+  border: 0;
+  transform: rotate(-45deg);
+  animation: rotate-orbit 115s linear infinite;
+}
+
 .uranus {
   height: 105px;
   width: 105px;
-  background-image: url(./assets/uranus.png);
-  border-radius: 50%;
+  background-image: url("./assets/uranus.png"); /* Replace with your uranus image */
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 10%;
-  bottom: 5%;
+
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: small;
-  justify-content: center;
   align-items: center;
-  transform: rotate(360deg);
-  transform-origin: center;
-  animation: rotate 5s linear infinite;
+  justify-content: center;
+  animation: rotate-orbit 115s linear infinite;
   overflow: hidden;
 }
 
 .neptune-orbit {
-  height: 850px;
-  width: 550px;
-  border: 0px solid rgb(161, 17, 17);
-  position: absolute;
-  left: 25.5%;
-  bottom: 6.5%;
-  border-radius: 50%;
-  animation: rotate 45s linear infinite;
+  height: 950px;
+  width: 950px;
+  border: 0;
+  animation: rotate-orbit 200s linear infinite;
+
+  transform: rotate(90deg);
 }
+
 .neptune {
   height: 105px;
   width: 105px;
-  background-image: url(./assets/neptune.png);
-  border-radius: 50%;
+  background-image: url("./assets/neptune.png"); /* Replace with your neptune image */
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
   position: absolute;
-  left: 10%;
-  bottom: 5%;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  font-size: xx-small;
   justify-content: center;
   align-items: center;
-  animation: rotate 5s linear infinite;
+  font-size: x-small;
+  animation: rotate-orbit 10s linear infinite;
 }
-@keyframes rotate {
+
+/* Keyframes for rotating orbits */
+@keyframes rotate-orbit {
   from {
     transform: rotate(0deg);
   }
