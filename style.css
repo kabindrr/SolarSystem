@@ -3,32 +3,36 @@
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden; /* Ensure no scrollbars */
+
+  overflow: hidden;
 }
 
 .solar-system {
   height: 100%;
   width: 100%;
-  background-image: url("./assets/b.jpg"); /* Replace with your background image */
+  background-image: url("./assets/galexy3.jpg"); /* Replace with your background image */
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 40%;
+
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
 }
 
-/* Centering the sun */
 .sun {
-  height: 140px;
-  width: 140px;
-  background-image: url("./assets/sun.png"); /* Replace with your sun image */
+  height: 120px;
+  width: 120px;
+  background-image: url("./assets/sun.png");
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   position: absolute;
-  z-index: 10; /* Ensure sun is above orbits */
+  z-index: 10;
+  animation: rotate-orbit 12s linear infinite;
 }
 
 /* General orbit styles */
@@ -218,7 +222,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: rotate-orbit 115s linear infinite;
+  animation: rotate-orbit 25s linear infinite;
   overflow: hidden;
 }
 
@@ -226,9 +230,8 @@
   height: 950px;
   width: 950px;
   border: 0;
+  transform: rotate(180deg);
   animation: rotate-orbit 200s linear infinite;
-
-  transform: rotate(90deg);
 }
 
 .neptune {
@@ -248,6 +251,7 @@
   align-items: center;
   font-size: x-small;
   animation: rotate-orbit 10s linear infinite;
+  transform: rotate(-360deg);
 }
 
 /* Keyframes for rotating orbits */
